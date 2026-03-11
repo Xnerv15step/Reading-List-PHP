@@ -15,7 +15,7 @@ function getDB(): PDO
         $pdo = new PDO(
             // DSN：指定資料庫類型、主機、資料庫名稱、編碼
             // charset=utf8mb4 支援中文及 emoji
-            "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
+            "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4",
             $user,
             $pass,
             [
