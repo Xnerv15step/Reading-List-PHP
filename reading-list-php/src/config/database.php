@@ -5,10 +5,11 @@
 // ============================================================
 function getDB(): PDO
 {
-    $host   = "localhost";       // 資料庫主機
-    $dbname = "reading_list";    // 資料庫名稱
-    $user   = "root";            // 資料庫帳號
-    $pass   = "lkhtm505";                // 資料庫密碼
+    $host   = getenv("DB_HOST");
+    $port   = getenv("DB_PORT") ?: "3306";
+    $dbname = getenv("DB_NAME");
+    $user   = getenv("DB_USER");
+    $pass   = getenv("DB_PASS");
 
     try {
         $pdo = new PDO(
